@@ -1,6 +1,6 @@
 {
   "name": "@alordash/levenshtein",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "My realization of levenshtein algorithm.",
   "main": "index.js",
   "scripts": {
