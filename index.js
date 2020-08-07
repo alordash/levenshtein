@@ -1,5 +1,4 @@
-const { levenshtein } = require('./src/levenshtein');
-let distance = new levenshtein("polynomial", "exponential");
-distance.showMatrix(4);
-console.log(distance.value);
+const levenshtein = require('./src/levenshtein');
+let distance = levenshtein.distance("polynomial", "exponential");
+console.log(distance);
 console.log("exiting...");
