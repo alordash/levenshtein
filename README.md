@@ -1,6 +1,12 @@
+# @alordash/levenshtein
+
+```
+$ npm i @alordash/levenshtein
+```  
+
 # Levenshtein algorithm
 
-My realization of levenshtein algorithm.
+My realization of [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) algorithm.
 
 # Usage
 
@@ -8,34 +14,44 @@ My realization of levenshtein algorithm.
 ```javascript
 const { distance, closest } = require('@alordash/levenshtein')
 
-// Print levenshtein distance between "best" and "better"
+// Print Levenshtein distance between "best" and "better"
 console.log(distance("best", "better"));
 //=> 3
 
-// Select the most similar string to "best" from string array.
-let value = closest("best", ["the good", "the bad", "the best"]);
+// Select the most similar string to "money" from string list.
+let value = closest("money", ["none", "some", "much"]);
 
 // Print closest string
 console.log(value.closest_string);
-//=> "the best"
+//=> "none"
 
-// Print levenshtein distance to closest string
+// Print Levenshtein distance to closest string
 console.log(value.distance);
-//=> 4
+//=> 2
 ```
 
 # Features
 
-You can also get calculation matrix using **distanceCalculation** class:  
+You can also create calculation object using **distanceCalculation** class:  
 ```javascript
 const { distanceCalculation } = require("@alordash/levenshtein");
 
-// Calculate levenshtein distance between "best" and "better"
-let matrixTest = new distanceCalculation("best", "better");
+// Calculate Levenshtein distance between "entity" and "identity"
+let object = new distanceCalculation("entity", "identity");
+
+// Print Levenshtein distance between "entity" and "identity"
+console.log(object.value);
+//=> 2
+
+// Change strings in object to "best" and "better" and calculate Levenshtein distance between them
+object.strings = ["best", "better"];
+
+// Print distance between "best" and "better"
+console.log(object.value);
+//=> 3
 
 // Print calculation matrix
-console.log(matrixTest.getMatrix());
-
+console.log(object.getMatrix());
 //=>
 //     |   | b | e | t | t | e | r
 //—————+–––+–––+–––+–––+–––+–––+–––
