@@ -37,21 +37,21 @@ You can also create calculation object using **distanceCalculation** class:
 const { distanceCalculation } = require("@alordash/levenshtein");
 
 // Calculate Levenshtein distance between "entity" and "identity"
-let object = new distanceCalculation("entity", "identity");
+let object = new Levenshtein("entity", "identity");
 
 // Print Levenshtein distance between "entity" and "identity"
-console.log(object.value);
-//=> 2
+console.log(object.valueOf(), object.distance);
+//=> 2 2
 
 // Change strings in object to "best" and "better" and calculate Levenshtein distance between them
 object.strings = ["best", "better"];
 
 // Print Levenshtein distance between "best" and "better"
-console.log(object.value);
+console.log(object.distance);
 //=> 3
 
 // Print calculation matrix
-console.log(object.getMatrix());
+console.log(object.toString());
 //=>
 //     |   | b | e | t | t | e | r
 //—————+–––+–––+–––+–––+–––+–––+–––
